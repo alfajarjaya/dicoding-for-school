@@ -3,18 +3,17 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
 
-
 @st.cache_data
 def load_data():
-    day_data = pd.read_csv('day.csv')
-    hour_data = pd.read_csv('hour.csv')
+    day_data = pd.read_csv('./day.csv')
+    hour_data = pd.read_csv('https://raw.githubusercontent.com/alfajarjaya/dicoding-for-school/main/data/hour.csv')
     day_data['dteday'] = pd.to_datetime(day_data['dteday'])
     hour_data['dteday'] = pd.to_datetime(hour_data['dteday'])
     return day_data, hour_data
 
 day_data, hour_data = load_data()
 
-st.title('Dashboard streamlit data CSV Peminjaman Sepeda')
+st.title('Dashboard Streamlit Data CSV Peminjaman Sepeda')
 
 st.sidebar.header('Opsi')
 option = st.sidebar.selectbox(
@@ -49,3 +48,7 @@ elif option == 'Pola Penggunaan Berdasarkan Jam':
     ax.set_xlabel('Jam')
     ax.set_ylabel('Total Peminjaman')
     st.pyplot(fig)
+
+# Footer with copyright information
+st.write("---")
+st.write("© 2024 alfajarjaya(hehe). All rights reserved.")

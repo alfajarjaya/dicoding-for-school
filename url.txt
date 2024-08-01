@@ -1,1 +1,1 @@
-BELUM DEPLOY T_T
+https://dicoding-alfajjar.streamlit.app/
