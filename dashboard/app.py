@@ -5,7 +5,7 @@ import streamlit as st
 
 # @st.cache_data
 # def load_data():
-day_data = pd.read_csv('./day.csv')
+day_data = pd.read_csv('https://raw.githubusercontent.com/alfajarjaya/dicoding-for-school/main/data/day.csv')
 hour_data = pd.read_csv('https://raw.githubusercontent.com/alfajarjaya/dicoding-for-school/main/data/hour.csv')
 day_data['dteday'] = pd.to_datetime(day_data['dteday'])
 hour_data['dteday'] = pd.to_datetime(hour_data['dteday'])
